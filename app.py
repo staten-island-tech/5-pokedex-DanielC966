@@ -19,10 +19,10 @@ print(" - Japanese")
 print(" - Chinese")
 print(" - French")
 language = input("Choose a language: ")
-while language.lower() != "english" or "japanese" or "chinese" or "french":
+while language.lower() != "english" and language.lower() != "japanese" and language.lower() != "chinese" and language.lower() != "french":
     print("Language not found") 
     language = input("Choose a language: ")
-
+print("test")
 
 printNames(language.lower())
 
