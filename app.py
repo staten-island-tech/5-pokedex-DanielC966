@@ -26,17 +26,10 @@ while language.lower() != "english" and language.lower() != "japanese" and langu
 printNames(language.lower())
 
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
-print("Languages: ")
-print(" - English")
-print(" - Japanese")
-print(" - Chinese")
-print(" - French")
-language = input("Choose a language: ")
-while language.lower() != "english" and language.lower() != "japanese" and language.lower() != "chinese" and language.lower() != "french":
-    print("Language not found") 
-    language = input("Choose a language: ")
+types = json.load(types)
+print("Types: ")
+for i in range()
 
-printNames(language.lower())
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
