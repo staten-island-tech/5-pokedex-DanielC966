@@ -27,13 +27,18 @@ while language.lower() != "english" and language.lower() != "japanese" and langu
 
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
 
-typeOption = "Fire"
+typeOption = input("Search for type: ")
 print("Types: ")
+typeCount = 0
 for i in range(len(data)):
-    if typeOption in data:
+    if typeOption in data[i]["type"]:
         print(data[i]["name"]["english"])
-    else:
-        print("No pokemon found")
+        typeCount += 1
+if typeCount > 0:
+    print(f"Found: {typeCount}")
+elif typeCount == 0:
+    print("None found")
+
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 
