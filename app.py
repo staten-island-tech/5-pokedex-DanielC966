@@ -28,19 +28,32 @@ while language.lower() != "english" and language.lower() != "japanese" and langu
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
 
 typeOption = input("Search for type: ")
-print("Types: ")
-typeCount = 0
-for i in range(len(data)):
-    if typeOption in data[i]["type"]:
-        print(data[i]["name"]["english"])
-        typeCount += 1
-if typeCount > 0:
-    print(f"Found: {typeCount}")
-elif typeCount == 0:
-    print("None found")
-
+def typesearch(typeoption):
+    typeCount = 0
+    print("Types: ")
+    for i in range(len(data)):
+        if typeoption.capitalize() in data[i]["type"]:
+            print(data[i]["name"]["english"])
+            typeCount += 1
+    if typeCount > 0:
+        print(f"Found: {typeCount}")
+    elif typeCount == 0:
+        print("None found")
+typesearch(typeOption)
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
-
+search = input("Search for a pokemon: ")
+def name_search(search):
+    foundCount = 0
+    for i in range(len(data)):
+        if search in data[i]["name"]["english"]:
+            print(data[i]["name"]["english"])
+            foundCount += 1
+    if foundCount > 0:
+        print(f"Pokemon Found: {foundCount}")
+    elif foundCount == 0:
+        print("No pokemon found")
+        
+name_search(search)
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
 
