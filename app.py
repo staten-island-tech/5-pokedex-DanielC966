@@ -57,3 +57,4 @@ def name_search(search):
 name_search(search)
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
 
+# use the search to list the moves
