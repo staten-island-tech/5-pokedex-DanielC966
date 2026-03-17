@@ -3,6 +3,7 @@ import json
 pokedex = open("./pokedex.json", encoding="utf8")
 ## create variable "data" that represents the enitre pokedex list
 data = json.load(pokedex)
+moves = json.load(open("./moves.json", encoding="utf8"))
 print(data[0])
 
 # Create a function that will take the data from the JSON file and you will iterate through the list of pokemon and print each pokemons name.
@@ -43,11 +44,13 @@ typesearch(typeOption)
 
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 search = input("Search for a pokemon: ")
+searchedList = []
 def name_search(search):
     foundCount = 0
     for i in range(len(data)):
         if search in data[i]["name"]["english"]:
             print(data[i]["name"]["english"])
+            searchedList.append(data[i]["id"])
             foundCount += 1
     if foundCount > 0:
         print(f"Pokemon Found: {foundCount}")
@@ -57,4 +60,10 @@ def name_search(search):
 name_search(search)
 #For Leo/, help me come up with a clever final question, considering maybe showing all moves a pokemon has avaiable based on type
 
+print("Moves: ")
+for i in range(len(searchedList)):
+    select = searchedList[i]
+    print(f"- Name: {data[select]["name"]["english"]}")
+    if data[select]["id"] == moves[select]["id"]:
+        print(f"- - {moves[select]["ename"]}")
 # use the search to list the moves
