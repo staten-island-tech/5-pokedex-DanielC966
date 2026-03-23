@@ -28,8 +28,8 @@ while language.lower() != "english" and language.lower() != "japanese" and langu
 
 # Develop a function that creates a new list of pokemon based on the type the user searched for. If no pokemon was found of that type inform the user
 
-typeOption = input("Search for type: ")
-def typesearch(typeoption):
+def typesearch():
+    typeoption = input("Search for type: ")
     typeCount = 0
     print("Types: ")
     for i in range(len(data)):
@@ -40,8 +40,7 @@ def typesearch(typeoption):
         print(f"Found: {typeCount}")
     elif typeCount == 0:
         print("None found")
-typesearch(typeOption)
-
+typesearch()
 #Develop a function to find all pokemon matching the name the user searched for. Ex. if "Char" return Charmander, Charmeleon and Charizard. Make the user aware if no pokemon was found. 
 search = input("Search for a pokemon: ")
 searchedList = []
@@ -50,7 +49,7 @@ def name_search(search):
     for i in range(len(data)):
         if search in data[i]["name"]["english"]:
             print(data[i]["name"]["english"])
-            searchedList.append(data[i]["id"])
+            searchedList.append(data[i]["type"])
             foundCount += 1
     if foundCount > 0:
         print(f"Pokemon Found: {foundCount}")
@@ -62,8 +61,8 @@ name_search(search)
 
 print("Moves: ")
 for i in range(len(searchedList)):
-    select = searchedList[i]
-    print(f"- Name: {data[select]["name"]["english"]}")
-    if data[select]["id"] == moves[select]["id"]:
-        print(f"- - {moves[select]["ename"]}")
-# use the search to list the moves
+    pokeType = searchedList[i]
+    for i in range(len(moves)):
+        if moves[i]["type"] in pokeType:
+            print(f"    {moves[i]["ename"]}")
+# use the search to list the moves BY TYPE
