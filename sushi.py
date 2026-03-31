@@ -1,4 +1,4 @@
-sushi_orders = [
+"""sushi_orders = [
     {"name": "California Roll", "price": 8},
     {"name": "Spicy Tuna Roll", "price": 10},
     {"name": "Salmon Nigiri", "price": 6},
@@ -26,4 +26,22 @@ def sushi(orders):
     for name, qt in receipt.items():
         print(f"{name} x {qt['quantity']} ... ${ qt['quantity'] * qt['price'] }")
 
-sushi(sushi_orders)
+sushi(sushi_orders)"""
+
+wards = {
+    "Cardiology": ["Alice", "Bob", "Carol"],
+    "Neurology": ["Diana", "Eve"],
+    "Orthopedics": ["Frank", "Grace", "Hank"],
+    "Oncology": ["Ivy", "Bob"]
+}
+
+staff = {}
+
+for ward, name in wards.items():
+    for ppl in name:
+        if name not in staff[]:
+            staff['names'] = {
+                f"{name}": ward
+            }
+
+print(staff)
