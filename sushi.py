@@ -24,6 +24,6 @@ def sushi(orders):
                 "quantity": 1
             }
     for name, qt in receipt.items():
-        print(f"{name} x {qt['quantity']}... ${qt['quantity'] * qt['price']}")
+        print(f"{name} x {qt['quantity']} ... ${ qt['quantity'] * qt['price'] }")
 
 sushi(sushi_orders)
