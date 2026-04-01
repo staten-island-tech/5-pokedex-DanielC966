@@ -39,9 +39,8 @@ staff = {}
 
 for ward, name in wards.items():
     for ppl in name:
-        if name not in staff[]:
-            staff['names'] = {
-                f"{name}": ward
-            }
+        if ppl not in staff:
+            staff[ppl] = []
+        staff[ppl].append(ward)
 
 print(staff)
